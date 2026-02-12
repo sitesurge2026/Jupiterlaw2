@@ -18,7 +18,8 @@ export function Header113() {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="text-6xl font-bold text-white md:text-9xl lg:text-10xl"
               >
-                Legal representation that stands with you
+                Legal representation that<br />
+                stands with you
               </motion.h1>
               <motion.div
                 initial={{ opacity: 0, x: 80 }}
