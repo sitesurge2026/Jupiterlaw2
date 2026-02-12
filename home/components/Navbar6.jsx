@@ -83,7 +83,7 @@ export function Navbar6() {
           </div>
           <span className={`font-semibold md:text-xl ${textClass}`}>Jupiter Law</span>
         </Link>
-        <div className="absolute hidden h-screen overflow-auto border-b border-neutral-lighter bg-white px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-auto lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:bg-none lg:px-0 lg:pt-0">
+        <div className="absolute hidden h-screen overflow-auto border-b border-neutral-lighter bg-white px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-auto lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:bg-transparent lg:px-0 lg:pt-0">
           <div className="flex flex-col items-center lg:flex-row lg:gap-6">
             <Link
               to="/"
