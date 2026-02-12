@@ -58,15 +58,16 @@ export function Navbar6() {
   }, [location.pathname]);
 
   const isLightPage = location.pathname === "/contact-us" || !isOverDarkBg;
-  const bgClass = isLightPage ? "bg-black" : "bg-white";
-  const textClass = isLightPage ? "text-white" : "text-black";
-  const logoFilter = isLightPage ? "brightness(0) invert(1)" : "brightness(0)";
-  const hamburgerClass = isLightPage ? "bg-white" : "bg-black";
+  const isHero = location.pathname === "/" && isOverDarkBg;
+  const bgClass = isHero ? "" : isLightPage ? "bg-black" : "bg-white";
+  const textClass = isHero ? "text-white" : isLightPage ? "text-white" : "text-black";
+  const logoFilter = isHero || isLightPage ? "brightness(0) invert(1)" : "brightness(0)";
+  const hamburgerClass = isHero || isLightPage ? "bg-white" : "bg-black";
 
   return (
     <section
       id="relume"
-      className={`fixed top-4 left-4 right-4 z-[999] flex min-h-5 items-center rounded-full py-0.5 pl-4 pr-[5%] md:min-h-6 md:left-[5%] md:right-[5%] md:top-6 md:py-0.5 md:pl-6 md:pr-[5%] ${bgClass}`}
+      className={`fixed top-0 left-0 right-0 z-[999] flex min-h-5 items-center rounded-none py-0.5 pl-4 pr-[5%] md:min-h-6 md:py-0.5 md:pl-6 md:pr-[5%] ${bgClass}`}
     >
       <div className="mx-auto flex size-full max-w-full items-center justify-between">
         <Link to="/" className="-ml-1 flex items-center gap-2">
@@ -82,7 +83,7 @@ export function Navbar6() {
           </div>
           <span className={`font-semibold md:text-xl ${textClass}`}>Jupiter Law</span>
         </Link>
-        <div className="absolute hidden h-screen overflow-auto border-b border-neutral-lighter bg-white px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-4 lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-start lg:border-none lg:bg-none lg:px-0 lg:pt-0">
+        <div className="absolute hidden h-screen overflow-auto border-b border-neutral-lighter bg-white px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-auto lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:bg-none lg:px-0 lg:pt-0">
           <div className="flex flex-col items-center lg:flex-row lg:gap-6">
             <Link
               to="/"
@@ -153,7 +154,7 @@ export function Navbar6() {
           initial="close"
           exit="close"
           transition={{ duration: 0.3 }}
-          className={`absolute left-4 right-4 top-full mt-2 overflow-hidden rounded-2xl px-6 py-4 lg:hidden md:left-[5%] md:right-[5%] ${bgClass}`}
+          className={`absolute left-4 right-4 top-full mt-2 overflow-hidden rounded-2xl px-6 py-4 lg:hidden md:left-[5%] md:right-[5%] ${isHero ? "bg-black/80 backdrop-blur-md" : bgClass}`}
         >
           <div className="flex flex-col">
             <Link
@@ -175,7 +176,7 @@ export function Navbar6() {
               Contact Us
             </Link>
             <div className="mt-4 flex flex-col gap-4">
-              <Button title="Contact Us" size="sm" asChild className={isLightPage ? "border-white text-white hover:bg-white/20" : "border-black text-black hover:bg-black/10"}>
+              <Button title="Contact Us" size="sm" asChild className={isHero || isLightPage ? "border-white text-white hover:bg-white/20" : "border-black text-black hover:bg-black/10"}>
                 <Link to="/contact-us">Contact Us</Link>
               </Button>
             </div>
