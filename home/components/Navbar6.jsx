@@ -59,7 +59,7 @@ export function Navbar6() {
 
   const isLightPage = location.pathname === "/contact-us" || !isOverDarkBg;
   const isHero = location.pathname === "/" && isOverDarkBg;
-  const bgClass = isHero ? "" : isLightPage ? "bg-black" : "bg-white";
+  const bgClass = isHero ? "bg-transparent" : isLightPage ? "bg-black" : "bg-white";
   const textClass = isHero ? "text-white" : isLightPage ? "text-white" : "text-black";
   const logoFilter = isHero || isLightPage ? "brightness(0) invert(1)" : "brightness(0)";
   const hamburgerClass = isHero || isLightPage ? "bg-white" : "bg-black";
@@ -83,7 +83,7 @@ export function Navbar6() {
           </div>
           <span className={`font-semibold md:text-xl ${textClass}`}>Jupiter Law</span>
         </Link>
-        <div className={`absolute hidden h-screen overflow-auto border-b border-neutral-lighter px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-auto lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:px-0 lg:pt-0 ${isHero ? "" : "bg-white"}`}>
+        <div className={`absolute hidden h-screen overflow-auto border-b border-neutral-lighter px-[5%] pb-24 pt-4 md:pb-0 lg:static lg:ml-auto lg:flex lg:h-auto lg:flex-1 lg:items-center lg:justify-end lg:border-none lg:px-0 lg:pt-0 ${isHero ? "bg-transparent" : "bg-white"}`}>
           <div className="flex flex-col items-center lg:flex-row lg:gap-6">
             <Link
               to="/"
