@@ -26,7 +26,9 @@ export default function Enquiry() {
 
   return (
     <section ref={ctaRef} className="py-40 px-6 md:px-16 bg-background flex flex-col items-center justify-center text-center relative z-20">
-
+      <h2 className="cta-elem font-sans font-bold text-5xl md:text-7xl text-primary tracking-tight mb-8">
+        Initiate Protocol.
+      </h2>
       <p className="cta-elem font-sans text-xl text-slate max-w-xl mb-12 text-balance">
         Schedule a confidential consultation to architect your defensive or offensive legal strategy.
       </p>
